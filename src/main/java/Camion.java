@@ -25,6 +25,6 @@ public class Camion extends Vehiculo{
     }
     
     public static void setCantidadCamiones(int cantidadCamiones){
-        cantidadCamiones=cantidadCamiones;
+        Camion.cantidadCamiones=cantidadCamiones;
     }
 }
