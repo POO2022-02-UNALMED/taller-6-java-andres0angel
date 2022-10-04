@@ -4,7 +4,7 @@ public class Camion extends Vehiculo{
     private int ejes;
     private static int cantidadCamiones;
     
-    public Camion(String placa, int puertas,int velocidadMaxima,String nombre,int precio,int peso,String traccion,
+    public Camion(String placa,String nombre,int precio,int peso,
             Fabricante fabricante, int ejes){
         super(placa, 2, 80, nombre, precio, peso, "4X2", fabricante);
         
@@ -22,5 +22,9 @@ public class Camion extends Vehiculo{
     
     public static int getCantidadCamiones(){
         return cantidadCamiones;
+    }
+    
+    public static void setCantidadCamiones(int cantidadCamiones){
+        cantidadCamiones=cantidadCamiones;
     }
 }
