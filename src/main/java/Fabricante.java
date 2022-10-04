@@ -1,28 +1,34 @@
 package vehiculos;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Fabricante {
-    public String nombre;
-    public Pais pais;
-    public int ventas=0;
-    public static ArrayList<Fabricante> fabricantes;
+    private String nombre;
+    private Pais pais;
+    //public int ventas=0;
+    //public static ArrayList<Fabricante> fabricantes;
+    static Map<Fabricante, Integer> ventasPorFabrica = new HashMap <Fabricante, Integer>();
     
     
     public Fabricante(String nombre, Pais pais){
         this.nombre=nombre;
         this.pais=pais;
-        this.ventas=0;
-        fabricantes.add(this);
+        //this.ventas=0;
+        //fabricantes.add(this);
     }
 
     public static Fabricante fabricaMayorVentas(){
         Fabricante fabricaMayorVentas = null;
-        int vende = -1;
-        for(Fabricante fabrica: fabricantes){
-            if(fabrica.ventas>vende){
-                fabricaMayorVentas=fabrica;
-                vende = fabrica.ventas;
+        int valor = -1;
+        
+        for(Entry<Fabricante, Integer> entry : ventasPorFabrica.entrySet()){
+            int vActual = entry.getValue();
+            if(vActual > valor){
+                valor = vActual;
+                fabricaMayorVentas = entry.getKey();
             }
         }
         return fabricaMayorVentas;

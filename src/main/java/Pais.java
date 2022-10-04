@@ -1,28 +1,34 @@
 package vehiculos;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Pais {
     private String nombre;
-    private int ventas=0;
-    public static ArrayList<Pais> list = new ArrayList<Pais>();
+    //private int ventas=0;
+    //public static ArrayList<Pais> list = new ArrayList<Pais>();
+    
+    static Map<Pais, Integer> ventaPais = new HashMap <Pais, Integer>();
     
     public Pais(String nombre){
         this.nombre=nombre;
-        this.ventas=0;
-        list.add(this);
+        //this.ventas=0;
+        //list.add(this);
     }
     
-        public static Pais paisMasVendedor(){
-        Pais paisMasVendedor = null;
-        int ventas=-1;
-        for (Pais nuevoPais: list){
-            if(nuevoPais.ventas>ventas){
-                ventas = nuevoPais.ventas;
-                paisMasVendedor = nuevoPais;
+    public static Pais paisMasVendedor(){
+        Pais paisVendedor = null;
+        int valor = -1;
+        
+        for(Map.Entry<Pais, Integer> entry : ventaPais.entrySet()){
+            int vActual = entry.getValue();
+            if(vActual > valor){
+                valor = vActual;
+                paisVendedor = entry.getKey();
             }
         }
-        return paisMasVendedor;
+        return paisVendedor;
     }
 
     
@@ -34,13 +40,8 @@ public class Pais {
         this.nombre=nombre;
     }
 
-    public int getVentas() {
-        return ventas;
-    }
-
-    public void setVentas(int ventas){
-        this.ventas=ventas;
-    }
+    
+    
 }
     
     
