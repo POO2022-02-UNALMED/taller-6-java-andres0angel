@@ -13,6 +13,19 @@ public class Pais {
         list.add(this);
     }
     
+        public static Pais paisMasVendedor(){
+        Pais paisMasVendedor = null;
+        int ventas=-1;
+        for (Pais nuevoPais: list){
+            if(nuevoPais.ventas>ventas){
+                ventas = nuevoPais.ventas;
+                paisMasVendedor = nuevoPais;
+            }
+        }
+        return paisMasVendedor;
+    }
+
+    
     public String getNombre(){
         return this.nombre;
     }
@@ -28,18 +41,8 @@ public class Pais {
     public void setVentas(int ventas){
         this.ventas=ventas;
     }
-    
-    
-    
-    public static Pais paisMasVendedor(){
-        Pais paisMasVendedor = null;
-        int ventas=-1;
-        for (Pais nuevoPais: list){
-            if(nuevoPais.ventas>ventas){
-                ventas = nuevoPais.ventas;
-                paisMasVendedor = nuevoPais;
-            }
-        }
-        return paisMasVendedor;
-    }
 }
+    
+    
+    
+

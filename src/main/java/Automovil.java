@@ -22,4 +22,8 @@ public class Automovil extends Vehiculo {
     public static int getCantidadAutomoviles(){
         return cantidadAutomoviles;
     }
+    
+    public static void setCantidadAutomoviles(int x){
+        Automovil.cantidadAutomoviles=x;
+    }
 }
