@@ -16,7 +16,7 @@ public class Fabricante {
         fabricantes.add(this);
     }
 
-    public Fabricante fabricaMayorVentas(){
+    public static Fabricante fabricaMayorVentas(){
         Fabricante fabricaMayorVentas = null;
         int vende = -1;
         for(Fabricante fabrica: fabricantes){
